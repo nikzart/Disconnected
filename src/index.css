@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-black: #0a0a0f;
+  --color-cyber-dark: #0d0d14;
+  --color-cyber-panel: #12121a;
+  --color-cyber-border: #1a1a2e;
+  --color-cyber-cyan: #00ffd5;
+  --color-cyber-green: #39ff14;
+  --color-cyber-magenta: #ff00ff;
+  --color-cyber-red: #ff3333;
+  --color-cyber-amber: #ffaa00;
+  --color-cyber-blue: #4488ff;
+  --color-cyber-muted: #666680;
+  --color-cyber-text: #c0c0d0;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-code: 'Fira Code', 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a1a2e #0a0a0f;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #2a2a4e;
+}
+
+::selection {
+  background: rgba(0, 255, 213, 0.3);
+  color: #00ffd5;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #0a0a0f;
+  color: #c0c0d0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 1px); }
+  40% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -1px); }
+  60% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 2px); }
+  80% { clip-path: inset(80% 0 5% 0); transform: translate(1px, -2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -1px); }
+  40% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 1px); }
+  60% { clip-path: inset(70% 0 10% 0); transform: translate(1px, -2px); }
+  80% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 2px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 4px currentColor; }
+  50% { text-shadow: 0 0 12px currentColor, 0 0 24px currentColor; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typing-cursor {
+  0%, 100% { border-color: #00ffd5; }
+  50% { border-color: transparent; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes matrix-drop {
+  0% { transform: translateY(-100%); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.animate-scanline { animation: scanline 8s linear infinite; }
+.animate-flicker { animation: flicker 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-typing-cursor { animation: typing-cursor 1s step-end infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.3s ease-out; }
+
+.text-glow-cyan { text-shadow: 0 0 6px #00ffd5, 0 0 12px rgba(0,255,213,0.4); }
+.text-glow-green { text-shadow: 0 0 6px #39ff14, 0 0 12px rgba(57,255,20,0.4); }
+.text-glow-magenta { text-shadow: 0 0 6px #ff00ff, 0 0 12px rgba(255,0,255,0.4); }
+.text-glow-red { text-shadow: 0 0 6px #ff3333, 0 0 12px rgba(255,51,51,0.4); }
+
+.neon-border-cyan { box-shadow: 0 0 4px #00ffd5, inset 0 0 4px rgba(0,255,213,0.1); border-color: #00ffd5; }
+.neon-border-green { box-shadow: 0 0 4px #39ff14, inset 0 0 4px rgba(57,255,20,0.1); border-color: #39ff14; }
+.neon-border-magenta { box-shadow: 0 0 4px #ff00ff, inset 0 0 4px rgba(255,0,255,0.1); border-color: #ff00ff; }
+.neon-border-red { box-shadow: 0 0 4px #ff3333, inset 0 0 4px rgba(255,51,51,0.1); border-color: #ff3333; }
+
+.crt-curve {
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(0,0,0,0.3);
+}
