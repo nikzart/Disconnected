@@ -2,6 +2,8 @@
 
 A story-based hacking investigative game set in 2027. You are **ECHO** (Maya Chen), a freelance white-hat hacker investigating the suspicious death of your mentor, Dr. Lena Vasquez. Uncover corporate corruption, rogue AI development, and government complicity as you hack your way to the truth about **Project LETHE** — an AI system designed to manipulate public perception at scale.
 
+**[Play Now](https://disconnected-game-app.web.app)**
+
 ![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
